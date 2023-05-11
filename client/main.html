@@ -1,28 +1,16 @@
 <head>
-  <title>simpleApp</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
 </head>
 
 <body>
-  <h1>I'm strong!My name is yly!</h1>
-
-  {{> hello}} {{> info}}
-</body>
-
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
-</template>
-
-<template name="info">
-  <h2>Learn Meteor!</h2>
+  <h1>List</h1>
   <ul>
-    <li>
-      <a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a>
-    </li>
-    <li>
-      <a href="http://guide.meteor.com" target="_blank">Follow the Guide</a>
-    </li>
-    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
-    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
+    {#each getItems() as item (item._id)}
+
+    <Item item="{item}"></Item>
+    {/each}
   </ul>
-</template>
+</body>
